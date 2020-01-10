@@ -28,12 +28,12 @@ class SecfilingsPipeline(object):
 
             
             if name == "NonDerivatives":
-                self.exporters[name].fields_to_export = ['CIK','TitleOfSecurity', 'TransactionDate','TransactionCode','Amount','SecuritiesAcquirednDisposed','Price','AmountOfSecurityOwned','OwnershipForm']
+                self.exporters[name].fields_to_export = ['CIK','Company','Ticker','TitleOfSecurity', 'TransactionDate','TransactionCode','Amount','SecuritiesAcquirednDisposed','Price','AmountOfSecurityOwned','OwnershipForm']
                 self.exporters[name].start_exporting()
 
 
             if name == "Derivatives":
-                self.exporters[name].fields_to_export = ['CIKDer','TitleofDerivativeSecurity','ConversionExercisePrice','TransactionDateDer','TransactionCodeDer','SecuritiesAcquired','SecuritiesDisposed','ExpirationDate','TitleOfSecurityDer','AmountDer','PriceDer','AmountOfSecurityOwnedDer','OwnershipFormDer']
+                self.exporters[name].fields_to_export = ['CIKDer','Company','Ticker','TitleofDerivativeSecurity','ConversionExercisePrice','TransactionDateDer','TransactionCodeDer','SecuritiesAcquired','SecuritiesDisposed','ExpirationDate','TitleOfSecurityDer','AmountDer','PriceDer','AmountOfSecurityOwnedDer','OwnershipFormDer']
                 self.exporters[name].start_exporting()
 
 

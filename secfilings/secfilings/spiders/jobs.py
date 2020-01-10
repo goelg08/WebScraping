@@ -46,6 +46,11 @@ class JobsSpider(Spider):
         CIK = response.meta['CIK']
         fData = response.xpath('//tbody')
         
+        list = response.xpath('//body/table')[1]
+        compTicker = list.xpath('.//td')[13]
+        compName = compTicker.xpath('.//a/text()').extract()
+        tickerName = compTicker.xpath('.//*[@class="FormData"]/text()').extract()
+        
         if len(fData) > 0:
         
             fData1 = response.xpath('//tbody')[0]
@@ -82,6 +87,8 @@ class JobsSpider(Spider):
                     nDOwnership = [ elem for elem in nDOwnership if '(' not in elem and '\n' not in elem and '$' not in elem]
                     
                     items['CIK'] = CIK
+                    items['Company'] = compName
+                    items['Ticker'] = tickerName
                     items['TitleOfSecurity'] = nDTitleofSecurity
                     items['TransactionDate'] =  nDTransactionDate
                     items['TransactionCode'] =  nDTransactionCode
@@ -125,6 +132,8 @@ class JobsSpider(Spider):
                     dOwnership = [ elem for elem in dOwnership if '(' not in elem and '\n' not in elem and '$' not in elem]
                     
                     items['CIKDer'] = CIK
+                    items['Company'] = compName
+                    items['Ticker'] = tickerName
                     items['TitleofDerivativeSecurity'] = dTitleofDerSecurity
                     items['ConversionExercisePrice'] = dConvExerPrice
                     items['TransactionDateDer'] = dTransactionDate
@@ -166,6 +175,8 @@ class JobsSpider(Spider):
                     nDOwnership = [ elem for elem in nDOwnership if '(' not in elem and '\n' not in elem and '$' not in elem]
                     
                     items['CIK'] = CIK
+                    items['Company'] = compName
+                    items['Ticker'] = tickerName
                     items['TitleOfSecurity'] = nDTitleofSecurity
                     items['TransactionDate'] =  nDTransactionDate
                     items['TransactionCode'] =  nDTransactionCode
@@ -214,6 +225,8 @@ class JobsSpider(Spider):
                     dOwnership = [ elem for elem in dOwnership if '(' not in elem and '\n' not in elem and '$' not in elem]
                     
                     items['CIKDer'] = CIK
+                    items['Company'] = compName
+                    items['Ticker'] = tickerName
                     items['TitleofDerivativeSecurity'] = dTitleofDerSecurity
                     items['ConversionExercisePrice'] = dConvExerPrice
                     items['TransactionDateDer'] = dTransactionDate
