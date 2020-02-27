@@ -10,7 +10,7 @@ fetch - Fetch or open URL with Scapy.
 genspider - to create a spider using pre-defined template. There are other crawl template to scrape full sites.
 shell - most imp feature of scrapy used to test out the project and see if datapoint is there. Basically to test our code in small pieces.
 startproject - Create new project.
-view - This is also Highly used command as this shows what exactly the scrapy sees.
+view - This is also Highly used command as this shows what exactly the scrapy sees. Sometimes normal site and what scrapy sees doesn't match.
 
 Start with creating a project:
 -> scrapy startproject quotes_spider
@@ -18,7 +18,7 @@ Navigate to quotes_spider folder:
 -> cd quotes_spider
 Verify the project:
 -> scrapy
-Create two spiders, which will be present under spider folder:
+Create two spiders, which will be present under spider folder: genspider contains two inputs - spider name or domain/site name.
 -> scrapy genspider quotes quotes.toscrape.com
 -> scrapy genspider example example.com
 To see what all spiders are present:
