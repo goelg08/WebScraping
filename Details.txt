@@ -21,6 +21,8 @@ Verify the project:
 Create two spiders, which will be present under spider folder: genspider contains two inputs - spider name or domain/site name.
 -> scrapy genspider quotes quotes.toscrape.com
 -> scrapy genspider example example.com
+Once spider project is created quotes.py and example.py file will be created unser spider folder with default template.
+
 To see what all spiders are present:
 -> scrapy list
 
